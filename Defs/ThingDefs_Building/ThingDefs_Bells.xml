@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ThingDef ParentName="BuildingBase">
+    <defName>PE_TribalBell</defName>
+    <label>class chimes</label>
+    <description>A quiet, incredibly slow to alert chime used to signal the start of classes. A teacher will manually ring this to call students.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Buildings/Tools/TribalBell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>5</Mass>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <WoodLog>50</WoodLog>
+    </costList>
+    <uiOrder>0.25</uiOrder>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Never</tickerType>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <researchPrerequisites>
+      <li>Stonecutting</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <compClass>CompInspectStringBlackboard</compClass>
+        <inspectString>Learning rate</inspectString>
+      </li>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>11</maxDistance>
+        <statOffsets>
+          <VEF_BuildingLearningRateOffset>0.05</VEF_BuildingLearningRateOffset>
+        </statOffsets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PE_SchoolBell</defName>
+    <label>school bell</label>
+    <description>A loud bell used to signal the start of classes. A teacher will manually ring this to call students.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Buildings/Tools/SchoolBell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Mass>5</Mass>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>50</Steel>
+    </costList>
+    <uiOrder>0.2</uiOrder>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Never</tickerType>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <researchPrerequisites>
+      <li>ComplexFurniture</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_InspectString">
+        <compClass>CompInspectStringBlackboard</compClass>
+        <inspectString>Learning rate</inspectString>
+      </li>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>11</maxDistance>
+        <statOffsets>
+          <VEF_BuildingLearningRateOffset>0.1</VEF_BuildingLearningRateOffset>
+        </statOffsets>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <ThingDef ParentName="BuildingBase">
+    <defName>PE_ElectricSchoolBell</defName>
+    <label>electric school bell</label>
+    <description>An automatic bell used to signal the start of classes. More reliable than a regular bell, as it doesn't need to be rung manually.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Buildings/Tools/ElectricSchoolBell</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.3</fillPercent>
+    <statBases>
+      <MaxHitPoints>150</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Flammability>0.3</Flammability>
+      <Mass>8</Mass>
+    </statBases>
+    <uiOrder>0.3</uiOrder>
+    <size>(1,1)</size>
+    <researchPrerequisites>
+      <li>Electricity</li>
+    </researchPrerequisites>
+    <costList>
+      <Steel>75</Steel>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <building>
+      <isEdifice>false</isEdifice>
+    </building>
+    <designationCategory>Misc</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsMisc</li>
+    </thingCategories>
+    <tickerType>Normal</tickerType>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>50</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_InspectString">
+        <compClass>CompInspectStringBlackboard</compClass>
+        <inspectString>Learning rate</inspectString>
+      </li>
+      <li Class="CompProperties_Facility">
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>11</maxDistance>
+        <statOffsets>
+          <VEF_BuildingLearningRateOffset>0.1</VEF_BuildingLearningRateOffset>
+        </statOffsets>
+      </li>
+	</comps>
+  </ThingDef>
+
+
+
+</Defs>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+                <Operation Class="PatchOperationAdd">
+                    <xpath>Defs/ThingDef[defName="SchoolDesk"]/comps/li[@Class="CompProperties_AffectedByFacilities"]/linkableFacilities</xpath>
+                    <value>
+							  <li>PE_TribalBell</li>
+							  <li>PE_SchoolBell</li>
+							  <li>PE_ElectricSchoolBell</li>
+							  <li>PE_Projector</li>
+					</value>
+                </Operation> 
+
+                <Operation Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="SchoolDesk"]/graphicData/texPath</xpath>
+                    <value>
+						  <texPath>Buildings/LessonDesks/LessonDesk</texPath>
+					</value>
+                </Operation>   
+
+                <Operation Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="Blackboard"]/graphicData/texPath</xpath>
+                    <value>
+						  <texPath>Buildings/LessonBoards/Blackboard</texPath>
+                    </value>
+                </Operation>
+
+                <Operation Class="PatchOperationReplace">
+                    <xpath>Defs/ThingDef[defName="Blackboard"]/comps</xpath>
+                    <value>
+						<comps>
+						  <li Class="CompProperties_InspectString">
+							<compClass>CompInspectStringBlackboard</compClass>
+							<inspectString>Learning rate</inspectString>
+						  </li>
+						  <li Class="CompProperties_Facility">
+							<maxSimultaneous>2</maxSimultaneous>
+							<maxDistance>6</maxDistance>
+							<statOffsets>
+							  <VEF_BuildingLearningRateOffset>0.2</VEF_BuildingLearningRateOffset>
+							</statOffsets>
+						  </li>
+						</comps>
+                    </value>
+                </Operation>     				
+
+</Patch>

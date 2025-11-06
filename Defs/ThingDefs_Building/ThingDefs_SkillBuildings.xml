@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <JoyKindDef>
+    <defName>SE_medical</defName>
+    <label>medical play</label>
+  </JoyKindDef>
+
+  <JoyGiverDef>
+    <defName>Train_StrikingBoard</defName>
+    <giverClass>JoyGiver_WatchBuilding</giverClass>
+    <baseChance>2.5</baseChance>
+    <thingDefs>
+      <li>PE_StrikingBoard</li>
+    </thingDefs>
+    <jobDef>JobTrain_StrikingBoard</jobDef>
+    <desireSit>false</desireSit>
+    <joyKind>VFE_StrengthPlay</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+  <JobDef>
+    <defName>JobTrain_StrikingBoard</defName>
+    <driverClass>JobDriver_SitFacingBuilding</driverClass>
+    <reportString>training at a striking board.</reportString>
+    <joyDuration>4500</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joySkill>Melee</joySkill>
+    <joyXpPerTick>0.025</joyXpPerTick>
+    <joyKind>VFE_StrengthPlay</joyKind>
+  </JobDef>
+
+  <JoyGiverDef>
+    <defName>Train_CadaverDummy</defName>
+    <giverClass>JoyGiver_WatchBuilding</giverClass>
+    <baseChance>2.5</baseChance>
+    <thingDefs>
+      <li>PE_Cadaver</li>
+    </thingDefs>
+    <jobDef>JobTrain_CadaverDummy</jobDef>
+    <desireSit>false</desireSit>
+    <joyKind>SE_medical</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+  <JobDef>
+    <defName>JobTrain_CadaverDummy</defName>
+    <driverClass>JobDriver_SitFacingBuilding</driverClass>
+    <reportString>practicing on a cadaver dummy.</reportString>
+    <joyDuration>4500</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joySkill>Medicine</joySkill>
+    <joyXpPerTick>0.025</joyXpPerTick>
+    <joyKind>SE_medical</joyKind>
+  </JobDef>
+
+  <JoyGiverDef>
+    <defName>Train_ShootingTarget</defName>
+    <giverClass>JoyGiver_WatchBuilding</giverClass>
+    <baseChance>2.5</baseChance>
+    <thingDefs>
+      <li>PE_ShootingTarget</li>
+    </thingDefs>
+    <jobDef>JobTrain_ShootingTarget</jobDef>
+    <desireSit>false</desireSit>
+    <joyKind>Gaming_Dexterity</joyKind>
+    <requiredCapacities>
+      <li>Manipulation</li>
+    </requiredCapacities>
+  </JoyGiverDef>
+
+  <JobDef>
+    <defName>JobTrain_ShootingTarget</defName>
+    <driverClass>JobDriver_SitFacingBuilding</driverClass>
+    <reportString>training at firearm station.</reportString>
+    <joyDuration>4500</joyDuration>
+    <joyMaxParticipants>1</joyMaxParticipants>
+    <joySkill>Shooting</joySkill>
+    <joyXpPerTick>0.025</joyXpPerTick>
+    <joyKind>Gaming_Dexterity</joyKind>
+  </JobDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>PE_StrikingBoard</defName>
+        <label>striking board</label>
+        <description>A plank embedded in the ground, with a dampening rope wrapped around its top half capable of taking direct blows. Can be used to train melee skills in classes.</description>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <WorkToBuild>2500</WorkToBuild>
+            <Mass>25</Mass>
+            <Flammability>0.7</Flammability>
+            <Beauty>-3</Beauty>
+			<JoyGainFactor>1</JoyGainFactor>
+        </statBases>
+        <uiIconOffset>(0, 0.1)</uiIconOffset>
+        <uiIconScale>1</uiIconScale>
+        <costList>
+            <WoodLog>1</WoodLog>
+            <Cloth>5</Cloth>
+        </costList>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>42</pathCost>
+        <fillPercent>0.4</fillPercent>
+        <rotatable>true</rotatable>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,1)</interactionCellOffset>
+        <researchPrerequisites>
+            <li>Stonecutting</li>
+        </researchPrerequisites>
+        <designationCategory>Joy</designationCategory>
+        <!--placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers-->
+		<building>
+		  <joyKind>VFE_StrengthPlay</joyKind>
+		  <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		  <paintable>true</paintable>
+		</building>
+		<socialPropernessMatters>true</socialPropernessMatters>
+        <graphicData>
+            <texPath>Buildings/Tools/StrikingBoard</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(2,2)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>PE_Cadaver</defName>
+        <label>cadaver dummy</label>
+        <description>A medical-grade cloth recreation of a baseliner, down to the individual muscles. Students can train their medical skills by performing practice surgeries on it.</description>
+        <statBases>
+            <MaxHitPoints>150</MaxHitPoints>
+            <WorkToBuild>30000</WorkToBuild>
+            <Mass>25</Mass>
+            <Flammability>0.7</Flammability>
+            <Beauty>-3</Beauty>
+			<JoyGainFactor>1</JoyGainFactor>
+        </statBases>
+        <size>(1,2)</size>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+        <pathCost>42</pathCost>
+        <costList>
+            <WoodLog>30</WoodLog>
+            <Steel>8</Steel>
+            <Cloth>100</Cloth>
+        </costList>
+		<building>
+		  <joyKind>SE_medical</joyKind>
+		  <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		  <paintable>true</paintable>
+		</building>
+        <uiIconOffset>(0, 0.15)</uiIconOffset>
+        <uiIconScale>1.35</uiIconScale>
+        <fillPercent>0.4</fillPercent>
+        <hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-1)</interactionCellOffset>
+        <researchPrerequisites>
+            <li>ComplexFurniture</li>
+        </researchPrerequisites>
+        <designationCategory>Joy</designationCategory>
+        <!-- <placeWorkers>
+            <li>PlaceWorker_ShowFacilitiesConnections</li>
+        </placeWorkers> -->
+		<socialPropernessMatters>true</socialPropernessMatters>
+        <graphicData>
+            <texPath>Buildings/Tools/Cadaver</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1.5,1.5)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+    </ThingDef>
+
+    <ThingDef ParentName="BuildingBase">
+        <defName>PE_ShootingTarget</defName>
+        <label>firearm station</label>
+        <description>A metallic target equipped with a practice rifle. Students can fire at the target to train their shooting skills.</description>
+        <statBases>
+            <MaxHitPoints>100</MaxHitPoints>
+            <WorkToBuild>1000</WorkToBuild>
+            <Mass>15</Mass>
+            <Flammability>1.0</Flammability>
+            <Beauty>-5</Beauty>
+			<JoyGainFactor>1</JoyGainFactor>
+        </statBases>
+        <uiIconScale>1</uiIconScale>
+        <stuffCategories>
+            <li>Metallic</li>
+        </stuffCategories>
+        <researchPrerequisites>
+            <li>Gunsmithing</li>
+        </researchPrerequisites>
+		<building>
+		  <joyKind>Gaming_Dexterity</joyKind>
+		  <watchBuildingStandDistanceRange>5~5</watchBuildingStandDistanceRange>
+		  <watchBuildingStandRectWidth>1</watchBuildingStandRectWidth>
+		  <watchBuildingInSameRoom>true</watchBuildingInSameRoom>
+		  <artificialForMeditationPurposes>false</artificialForMeditationPurposes>
+		  <paintable>true</paintable>
+		</building>
+        <costStuffCount>50</costStuffCount>
+        <altitudeLayer>BuildingOnTop</altitudeLayer>
+        <passability>PassThroughOnly</passability>
+		<defaultPlacingRot>South</defaultPlacingRot>
+		<drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+		<descriptionHyperlinks>
+			<ThingDef>PE_ShootingTarget</ThingDef>
+		</descriptionHyperlinks>
+        <pathCost>42</pathCost>
+        <fillPercent>0.4</fillPercent>
+        <!--hasInteractionCell>True</hasInteractionCell>
+        <interactionCellOffset>(0,0,-2)</interactionCellOffset-->
+        <designationCategory>Joy</designationCategory>
+		<placeWorkers>
+		  <li>PlaceWorker_WatchArea</li>
+		</placeWorkers>
+        <size>(1,1)</size>
+		<socialPropernessMatters>true</socialPropernessMatters>
+        <graphicData>
+            <texPath>Buildings/Tools/ShootingTarget</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>(1,1)</drawSize>
+
+            <!--drawOffsetNorth>(0, 0, 2)</drawOffsetNorth>
+            <drawOffsetSouth>(0, 0, -2)</drawOffsetSouth>
+            <drawOffsetEast>(2, 0, 0)</drawOffsetEast>
+            <drawOffsetWest>(-2, 0, 0)</drawOffsetWest-->
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
+        </graphicData>
+    </ThingDef>
+
+</Defs>
