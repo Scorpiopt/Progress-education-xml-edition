@@ -50,6 +50,10 @@
           <VEF_BuildingLearningRateOffset>0.05</VEF_BuildingLearningRateOffset>
         </statOffsets>
       </li>
+      <li Class="Progresseducationxmledition.CompProperties_Bell">
+        <soundDef>PE_TribalBell</soundDef>
+        <ticksToRing>5000</ticksToRing>
+      </li>
     </comps>
   </ThingDef>
 
@@ -102,6 +106,10 @@
         <statOffsets>
           <VEF_BuildingLearningRateOffset>0.1</VEF_BuildingLearningRateOffset>
         </statOffsets>
+      </li>
+      <li Class="Progresseducationxmledition.CompProperties_Bell">
+        <soundDef>PE_SchoolBell</soundDef>
+        <ticksToRing>100</ticksToRing>
       </li>
     </comps>
   </ThingDef>
@@ -161,7 +169,10 @@
           <VEF_BuildingLearningRateOffset>0.1</VEF_BuildingLearningRateOffset>
         </statOffsets>
       </li>
-	</comps>
+      <li Class="Progresseducationxmledition.CompProperties_Bell">
+        <soundDef>PE_ElectricSchoolBell</soundDef>
+      </li>
+ </comps>
   </ThingDef>
 
 
