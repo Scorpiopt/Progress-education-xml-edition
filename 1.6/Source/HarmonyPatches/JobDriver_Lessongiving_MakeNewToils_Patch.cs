@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using HarmonyLib;
 using RimWorld;
@@ -16,10 +16,10 @@ namespace Progresseducationxmledition
         {
             var driver = __instance;
             var pawn = driver.pawn;
+            var existingToils = __result.ToList();
             var newToils = new List<Toil>();
 
             var startOfOriginalToils = new Toil();
-
             Toil findBell = Toils_General.Do(() =>
             {
                 var electricBell = GenClosest.ClosestThingReachable(pawn.Position, pawn.Map, ThingRequest.ForDef(PEDefOf.PE_ElectricSchoolBell), PathEndMode.InteractionCell, TraverseParms.For(pawn));
@@ -91,7 +91,7 @@ namespace Progresseducationxmledition
             newToils.Add(waitToil);
 
             newToils.Add(startOfOriginalToils);
-            newToils.AddRange(__result);
+            newToils.AddRange(existingToils);
             __result = newToils;
         }
     }

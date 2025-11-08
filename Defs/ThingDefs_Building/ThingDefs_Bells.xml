@@ -52,7 +52,7 @@
       </li>
       <li Class="Progresseducationxmledition.CompProperties_Bell">
         <soundDef>PE_TribalBell</soundDef>
-        <ticksToRing>5000</ticksToRing>
+        <ticksToRing>1666</ticksToRing>
       </li>
     </comps>
   </ThingDef>
@@ -172,9 +172,7 @@
       <li Class="Progresseducationxmledition.CompProperties_Bell">
         <soundDef>PE_ElectricSchoolBell</soundDef>
       </li>
- </comps>
+    </comps>
   </ThingDef>
-
-
 
 </Defs>
